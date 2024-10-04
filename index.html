@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Animation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        @keyframes moveText {
+            0% {
+                transform: translateX(0);
+                color: white;
+            }
+            50% {
+                color: rgb(118, 114, 114);
+            }
+            100% {
+                transform: translateX(100px);
+                color: black;
+            }
+        }
+
+        @keyframes rotateIcons {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .rotate {
+            animation: rotateIcons 5s linear infinite;
+        }
+
+        .move-text {
+            animation: moveText 5s ease-in-out infinite;
+        }
+
+        .circle {
+            position: absolute;
+            top: 30%;
+            left: 30%;
+            /* transform: translate(-0%, -50%); */
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+        }
+
+        .circle-icon {
+            position: absolute;
+            font-size: 2rem;
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        .icon-1 { top: 0; left: 50%; transform: translateX(-50%); }
+        .icon-2 { top: 20%; left: 85%; transform: translate(-50%, -50%); }
+        .icon-3 { top: 50%; left: 100%; transform: translate(-50%, -50%); }
+        .icon-4 { top: 80%; left: 85%; transform: translate(-50%, -50%); }
+        .icon-5 { bottom: 0; left: 50%; transform: translateX(-50%); }
+        .icon-6 { top: 80%; left: 15%; transform: translate(-50%, -50%); }
+        .icon-7 { top: 50%; left: 0; transform: translate(-50%, -50%); }
+        .icon-8 { top: 20%; left: 15%; transform: translate(-50%, -50%); }
+    </style>
+</head>
+<body class="bg-yellow-500 relative min-h-screen">
+    <div class="circle rotate">
+        <i class="fas fa-phone circle-icon icon-1"></i>
+        <i class="fas fa-home circle-icon icon-2"></i>
+        <i class="fas fa-camera circle-icon icon-3"></i>
+        <i class="fas fa-lightbulb circle-icon icon-4"></i>
+        <i class="fas fa-laptop circle-icon icon-5"></i>
+        <i class="fab fa-twitter circle-icon icon-6"></i>
+        <i class="fab fa-facebook circle-icon icon-7"></i>
+        <i class="fab fa-youtube circle-icon icon-8"></i>
+    </div>
+
+    <div class="absolute left-0 top-1/2 transform -translate-y-1/2 ml-10">
+        <p class="text-2xl font-bold move-text">Pay bills instantly</p>
+    </div>
+</body>
+</html>
